@@ -106,6 +106,7 @@
                         peer.reconnect();
                     });
                     peer.on('close', function() {
+                        conn.close();
                         conn = null;
                         status.innerHTML = "Connection destroyed. Please refresh";
                         console.log('Connection destroyed');
