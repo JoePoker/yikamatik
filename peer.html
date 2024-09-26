@@ -110,9 +110,11 @@
                         conn = null;
                         status.innerHTML = "Connection destroyed. Please refresh";
                         console.log('Connection destroyed');
+                        peer.destroy();
                     });
                     peer.on('error', function (err) {
                         console.log(err);
+                        peer.destroy();
                         //alert('' + err);
                     });
                 };
