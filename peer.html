@@ -18,7 +18,7 @@
           <a onclick=" window.ReactNativeWebView.postMessage('closeButtonClick');" style="color:#f55;padding:1px;display:inline-block;text-decoration:none; position:absolute; right:20px; top:3px; font-size:30px;" href="">✖</a>
         </div>
         <div id="receiver-id" class="status">Device ID</div>
-                <div id="stat" class="status">Not Connected</div>
+                <div id="stat" class="status" style="background-color:#f00; color:#fff;">Not Connected</div>
                 <div class="message" id="message">Message</div>
 </div>
 <hr>        
@@ -37,7 +37,7 @@
                 var peerId = null;
                 var conn = null;
                 var recvId = document.getElementById("receiver-id");
-                var status = document.getElementById("stat");
+                var stat = document.getElementById("stat");
                 var message = document.getElementById("message");
                 var standbyBox = document.getElementById("standby");
                 var goBox = document.getElementById("go");
@@ -72,7 +72,7 @@
 
                         console.log('ID: ' + peer.id);
                         recvId.innerHTML = 'ID: <b style="color:#dd3">' + peer.id+"</b>";
-                        status.innerHTML = "Awaiting connection...";
+                        stat.innerHTML = "Awaiting connection...";
                     });
                     peer.on('connection', function (c) {
                         // Allow only a single connection
