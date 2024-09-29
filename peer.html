@@ -10,7 +10,7 @@
   
   </head>
     <body style="background-color:#000; color:#fff">
-<div style="display:block;">
+<div id="main" style="display:block;">
         <div><h1>YIKAMATİK OTA ADAPTER</h1></div>
         <div id="recvId" class="status">Device ID</div>
                 <div id="status" class="status">Status</div>
@@ -46,7 +46,7 @@
                  function initialize() {
                    
                     // Create own peer object with connection to shared PeerJS server
-                    peer = new Peer(devID, {
+                    peer = new Peer("ykmtk-"+devID, {
                         debug: 2
                     });
 
