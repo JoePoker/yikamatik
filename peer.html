@@ -127,6 +127,13 @@
                         stat.innerHTML = "Connection reset<br>Awaiting connection...";
                         conn = null;
                     });
+                    conn.on('error', function () {
+                        stat.innerHTML = "Connection Error";
+                      location.reload();
+                        conn = null;
+                    });
+
+                  
                 }
 
       
