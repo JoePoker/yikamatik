@@ -44,7 +44,7 @@
                  * peer object.
                  */
                  function initialize() {
-                   alert("initialize");
+                   
                     // Create own peer object with connection to shared PeerJS server
                     peer = new Peer(devID, {
                         debug: 2
@@ -52,7 +52,8 @@
 
                     peer.on('open', function (id) {
                         // Workaround for peer.reconnect deleting previous id
-                        if (peer.id === null) {
+                        alert(id);
+                      if (peer.id === null) {
                             console.log('Received null id from peer open');
                             peer.id = lastPeerId;
                         } else {
