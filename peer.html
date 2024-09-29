@@ -108,6 +108,7 @@
                     peer.on('error', function (err) {
                         console.log(err);
                         peer.destroy();
+                      location.reload();
                         //alert('' + err);
                     });
                 };
