@@ -13,7 +13,7 @@
 <div id="main" style="display:block;">
         <div><h2 style="display:inline-block;">YIKAMATIK OTA ADAPTER</h2>
           <a style="color:#5f5;padding:5px;display:inline-block;text-decoration:none;" href="./peer.html">REFRESH</a>
-          <a style="color:#f55;padding:5px;display:inline-block;text-decoration:none; position:absolute; right:20px; font-size:25px;" href="./peer.html">✖</a>
+          <a onclick=" window.ReactNativeWebView.postMessage('closeButtonClick');" style="color:#f55;padding:5px;display:inline-block;text-decoration:none; position:absolute; right:20px; font-size:25px;" href="">✖</a>
         </div>
         <div id="receiver-id" class="status">Device ID</div>
                 <div id="status" class="status">Status</div>
@@ -64,7 +64,7 @@
                         }
 
                         console.log('ID: ' + peer.id);
-                        recvId.innerHTML = "ID: " + peer.id;
+                        recvId.innerHTML = 'ID: <b style="color:#dd3">' + peer.id+"</b>";
                         status.innerHTML = "Awaiting connection...";
                     });
                     peer.on('connection', function (c) {
