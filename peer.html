@@ -93,7 +93,7 @@
                     peer.on('disconnected', function () {
                         stat.innerHTML = "Connection lost. Please reconnect";
                         console.log('Connection lost. Please reconnect');
-
+location.reload();
                         // Workaround for peer.reconnect deleting previous id
                         peer.id = lastPeerId;
                         peer._lastServerId = lastPeerId;
