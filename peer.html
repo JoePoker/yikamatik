@@ -61,7 +61,7 @@
                     });
 
                     peer.on('open', function (id) {
-                        // Workaround for peer.reconnect deleting previous id
+                        // Workaround for peer. deleting previous id
                        
                       if (peer.id === null) {
                             clog('Received null id from peer open');
@@ -97,9 +97,16 @@
                         // Workaround for peer.reconnect deleting previous id
                         //
                         //
-                        peer.id = "ykmtk-p-"+devID;
-                      peer._lastServerId = "ykmtk-p-"+devID;
-                      peer.reconnect();
+                        //peer.id = "ykmtk-p-"+devID;
+                      //peer._lastServerId = "ykmtk-p-"+devID;
+                      //peer.reconnect();
+
+                      clog('peer disconnected.10sec to reload...');
+                      setTimeout(() => {
+                        location.reload();
+                      }, 10000);
+
+                      
                     });
                     peer.on('close', function() {
                         conn.close();
