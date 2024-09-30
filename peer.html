@@ -66,7 +66,7 @@
                       if (peer.id === null) {
                             clog('Received null id from peer open');
                             peer.id = lastPeerId;
-                         location.reload();
+                         //location.reload();
                         } else {
                             lastPeerId = peer.id;
                         }
@@ -112,7 +112,7 @@
                       
                         clog(err);
                         peer.destroy();
-                      location.reload();
+                      //location.reload();
                         //alert('' + err);
                     });
                 };
@@ -130,11 +130,11 @@
                     conn.on('close', function () {
                         stat.innerHTML = "Connection reset<br>Awaiting connection...";
                         conn = null;
-                       location.reload();
+                      // location.reload();
                     });
                     conn.on('error', function () {
                         stat.innerHTML = "Connection Error";
-                      location.reload();
+                      //location.reload();
                         conn = null;
                     });
 
