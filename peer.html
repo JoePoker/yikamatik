@@ -121,9 +121,7 @@
                         peer.destroy();
 
                       clog('10sec to reload...');
-                      setTimeout(() => {
-                        location.reload();
-                      }, 10000);
+                      setTimeout(() => {  location.reload(); }, 10000);
                       //alert('' + err);
                     });
                 };
@@ -145,8 +143,8 @@
                     });
                     conn.on('error', function () {
                         stat.innerHTML = "Connection Error";
-                      //location.reload();
                         conn = null;
+                      setTimeout(() => {  location.reload(); }, 10000);
                     });
 
                   
