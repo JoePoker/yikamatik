@@ -126,6 +126,7 @@
                     conn.on('close', function () {
                         stat.innerHTML = "Connection reset<br>Awaiting connection...";
                         conn = null;
+                       location.reload();
                     });
                     conn.on('error', function () {
                         stat.innerHTML = "Connection Error";
