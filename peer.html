@@ -64,14 +64,14 @@
                         // Workaround for peer.reconnect deleting previous id
                        
                       if (peer.id === null) {
-                            console.log('Received null id from peer open');
+                            clog('Received null id from peer open');
                             peer.id = lastPeerId;
                          location.reload();
                         } else {
                             lastPeerId = peer.id;
                         }
 
-                        console.log('ID: ' + peer.id);
+                        clog('ID: ' + peer.id);
                         recvId.innerHTML = 'ID: <b style="color:#dd3">' + peer.id+"</b>";
                         stat.innerHTML = "Awaiting connection...";
                     });
@@ -86,13 +86,13 @@
                         }
 
                         conn = c;
-                        console.log("Connected to: " + conn.peer);
+                        clog("Connected to: " + conn.peer);
                         stat.innerHTML = "Connected";
                         ready();
                     });
                     peer.on('disconnected', function () {
                         stat.innerHTML = "Connection lost. Please reconnect";
-                        console.log('Connection lost. Please reconnect');
+                        clog('Connection lost. Please reconnect');
 //location.reload();
                         // Workaround for peer.reconnect deleting previous id
                         //
@@ -105,12 +105,12 @@
                         conn.close();
                         conn = null;
                         stat.innerHTML = "Connection destroyed. Please refresh";
-                        console.log('Connection destroyed');
+                        clog('Connection destroyed');
                         peer.destroy();
                     });
                     peer.on('error', function (err) {
                       
-                        console.log(err);
+                        clog(err);
                         peer.destroy();
                       location.reload();
                         //alert('' + err);
@@ -123,9 +123,9 @@
                  */
                 function ready() {
                     conn.on('data', function (data) {
-                        console.log("Data recieved");
+                        clog("Data recieved");
             //window.ReactNativeWebView.postMessage(data );
-                      message.innerHTML=data;
+                      
                     });
                     conn.on('close', function () {
                         stat.innerHTML = "Connection reset<br>Awaiting connection...";
@@ -141,7 +141,11 @@
                   
                 }
 
-      
+      function clog(data) {
+
+        message.innerHTML+="<br>"+data;
+        
+      }
 
                 //initialize();
 
