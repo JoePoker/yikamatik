@@ -95,9 +95,11 @@
                         console.log('Connection lost. Please reconnect');
 //location.reload();
                         // Workaround for peer.reconnect deleting previous id
-                        //peer.id = lastPeerId;
-                        //peer._lastServerId = lastPeerId;
-                        //peer.reconnect();
+                        //
+                        //
+                        peer.id = "ykmtk-p-"+devID;
+                      peer._lastServerId = "ykmtk-p-"+devID;
+                      peer.reconnect();
                     });
                     peer.on('close', function() {
                         conn.close();
