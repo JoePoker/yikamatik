@@ -66,6 +66,7 @@
                       if (peer.id === null) {
                             console.log('Received null id from peer open');
                             peer.id = lastPeerId;
+                         location.reload();
                         } else {
                             lastPeerId = peer.id;
                         }
