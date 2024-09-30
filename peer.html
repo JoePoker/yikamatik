@@ -112,8 +112,12 @@
                       
                         clog(err);
                         peer.destroy();
-                      //location.reload();
-                        //alert('' + err);
+
+                      clog('10sec to reload...');
+                      setTimeout(() => {
+                        location.reload();
+                      }, 10000);
+                      //alert('' + err);
                     });
                 };
 
