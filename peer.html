@@ -134,7 +134,7 @@
                     conn.on('data', function (data) {
                         clog("Data recieved");
                       if(data==="restartConnection")  {conn.send("OK"); location.reload();}
-                      
+                      if(data==="ping")  {conn.send("pong"); }
             //window.ReactNativeWebView.postMessage(data );
                       
                     });
