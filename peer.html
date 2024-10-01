@@ -133,6 +133,8 @@
                 function ready() {
                     conn.on('data', function (data) {
                         clog("Data recieved");
+                      if(data==="restartBrowser")  location.reload();
+                      
             //window.ReactNativeWebView.postMessage(data );
                       
                     });
