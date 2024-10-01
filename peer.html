@@ -103,6 +103,7 @@
 
                       clog('peer disconnected.10sec to reload...');
                       setTimeout(() => {
+                        conn.send("OK");
                         location.reload();
                       }, 10000);
 
@@ -133,7 +134,7 @@
                 function ready() {
                     conn.on('data', function (data) {
                         clog("Data recieved");
-                      if(data==="restartBrowser")  location.reload();
+                      if(data==="restartConnection")  {location.reload();}
                       
             //window.ReactNativeWebView.postMessage(data );
                       
