@@ -23,7 +23,7 @@
 </div>
 <hr>        
 
-        <script src="https://unpkg.com/peerjs@1.5.0/dist/peerjs.min.js"></script>
+        <script src="./peerjs.min.js"></script>
         <script type="text/javascript">
 
 
@@ -132,7 +132,7 @@
                  */
                 function ready() {
                     conn.on('data', function (data) {
-                        clog("Data recieved");
+                        clog("Data recieved:"+data.length);
                       if(data==="restartConnection")  {conn.send("OK"); location.reload();}
                       if(data==="ping")  {conn.send("pong"); }
             //window.ReactNativeWebView.postMessage(data );
