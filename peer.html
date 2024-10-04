@@ -133,18 +133,19 @@
                  * Triggered once a connection has been achieved.
                  * Defines callbacks to handle incoming data and connection events.
                  */
-                function ready() {
+                function ready() { /////////////////////////////////////////////////////////////////////////////
                     conn.on('data', function (data) {
                       
                       
                       if(typeof data  === "object"){
                         clog(":obj" );
-                        fileT.innerHTML=fileMeta.join("<br>") + "<br>"+data.byteLength;
+                        fileT.innerHTML=fileMeta.join("<br>";
+                        fileT.innerHTML+= "<br>"+data.byteLength;
                       }
                       
                       if(data.startsWith("upload·"))  {
                         conn.send("OK");
-                        fileMeta=data.split("·").push("0B");
+                        fileMeta=data.split("·");
                       }
 
                       if(data==="restartConnection")  {conn.send("OK"); location.reload();}
