@@ -137,9 +137,9 @@
                     conn.on('data', function (data) {
                       
                       clog(typeof(data));
-                      if(data.byteLength !== undefined){
+                      if(typeof(data) === "object"){
                         //clog(":"+data.byteLength );
-                        fileT.innerHTML =fileMeta.join("<br>");
+                        fileT.innerHTML =fileMeta.join("<br>") + "<br>"+data.byteLength;
                       }
                       
                       if(data.startsWith("upload·"))  {
