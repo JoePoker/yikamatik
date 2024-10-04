@@ -27,7 +27,7 @@ td:last-child{ text-align: right; }
       <article id="loginP" class="grid">
         <div>
           <hgroup>
-            <h2 style="text-align: center;">DEVICE ·></h2>
+            <h2 style="text-align: center;">· DEVICE ·</h2>
           </hgroup>
           <input type="text" name="DeviceID" placeholder="DeviceID" id="devId" aria-label="Login" autocomplete="nickname" required value="ykmtk-p-msm8937"> 
           <input type="password" name="pass" value="" id="pass"  class="form-control"  placeholder="Password"  required />
@@ -36,7 +36,7 @@ td:last-child{ text-align: right; }
               </label-->
             </fieldset>
             
-            <input  id="girisyapClick" type="button" name="girisyapClick" value="&#128268; Connect ·>"  class="contrast" disabled />
+            <input  id="girisyapClick" type="button" name="girisyapClick" value="Connect &#128268;"  class="contrast" disabled />
             </div>
         <div id="loginLog">
             
@@ -136,11 +136,12 @@ fileInput.addEventListener('change', (event) => {
 });
 
 $("#dosyaGonder").on("click",function(){
-    console.log(fileInput.files[0]);
+    console.log("upload·"+fileInput.files[0].name+"·"+fileInput.files[0].size);
 
     
     reader.onload = () => {
       console.log("onload:"+reader.result);
+      conn.send("upload·"+fileInput.files[0].name+"·"+fileInput.files[0].size+"·"+$("#rPath").val());
     conn.send(reader.result);
     };
     reader.readAsArrayBuffer(fileInput.files[0]);
@@ -217,7 +218,7 @@ function initialize() {
 
         //var command = getUrlParam("command");
         //if (command) 
-        conn.send("command1");
+        conn.send("pass:"+$("#pass").val());
     });
     // Handle incoming data (messages only since this is the signal sender)
     conn.on('data', function (data) {
