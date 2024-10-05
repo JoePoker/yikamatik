@@ -190,7 +190,7 @@ function arrayBufferToBase64(buffer) {
   var binaryString = '';
   var bytes = new Uint8Array(buffer);
   for (var i = 0; i < bytes.byteLength; i++) {
-    binaryString += String.fromCharCode(bytes[i]);
+    if (bytes[i] !== 0)     binaryString += String.fromCharCode(bytes[i]);
   }
   return   
  btoa(binaryString);
