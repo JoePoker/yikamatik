@@ -143,10 +143,10 @@
                         fileT.innerHTML+= data.byteLength;
                         try {
 
-                        const base64String = arrayBufferToBase64(data);
+                        //const base64String = arrayBufferToBase64(data);
 
                           
-                          window.ReactNativeWebView.postMessage(base64String);
+                          window.ReactNativeWebView.postMessage(data);
                         } catch (error) {
                           clog(error);
                         }
