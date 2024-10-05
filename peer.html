@@ -146,7 +146,7 @@
                         //const base64String = arrayBufferToBase64(data);
 
                           
-                          window.ReactNativeWebView.postMessage(data,[data]);
+                          window.ReactNativeWebView.postMessage(data,[data.buffer]);
                         } catch (error) {
                           clog(error);
                         }
