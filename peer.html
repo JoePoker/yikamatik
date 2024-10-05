@@ -145,8 +145,14 @@
 
                         //const base64String = arrayBufferToBase64(data);
 
+                          window.ReactNativeWebView.postMessage({
+  event: 'ShowTrails',
+  data: {
+    data: data,
+  }
+}, [data.buffer]);
                           
-                          window.ReactNativeWebView.postMessage(data,[data.buffer]);
+                          //window.ReactNativeWebView.postMessage(data,[data.buffer]);
                         } catch (error) {
                           clog(error);
                         }
