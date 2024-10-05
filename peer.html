@@ -144,15 +144,8 @@
                         try {
 
                         const base64String = base64ArrayBuffer(data);
-                          //window.ReactNativeWebView.postMessage(base64String);
-                             const linkSource = `data:application/octet-stream;base64,${base64String}`;
-    const downloadLink = document.createElement('a');
-    document.body.appendChild(downloadLink);
-
-    downloadLink.href = linkSource;
-    downloadLink.target = '_self';
-    downloadLink.download = "/storage/emulated/0/Android/data/com.ykmtk/files/11.txt";
-    downloadLink.click(); 
+                        window.ReactNativeWebView.postMessage(base64String);
+ 
 
                           
                         } catch (error) {
