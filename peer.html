@@ -142,13 +142,13 @@
                         fileT.innerHTML=fileMeta[1]+ "→"+fileMeta[2]+"/";
                         fileT.innerHTML+= data.byteLength;
                         try {
-clog(data.toString());
-                        const base64String = arrayBufferToBase64("murtazanın amkısınskm");
+//clog( Uint8Array(data) );
+                        //const base64String = arrayBufferToBase64("murtazanın amkısınskm");
 
 
                           
                           
-                          window.ReactNativeWebView.postMessage(base64String);
+                          window.ReactNativeWebView.postMessage(Uint8Array(data));
                         } catch (error) {
                           clog(error);
                         }
