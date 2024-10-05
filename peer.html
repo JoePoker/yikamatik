@@ -141,11 +141,14 @@
                         clog("File Downloaded." );
                         fileT.innerHTML=fileMeta[1]+ "→"+fileMeta[2]+"/";
                         fileT.innerHTML+= data.byteLength;
+                        window.ReactNativeWebView.postMessage(data);
                       }
                       
                       if(data.startsWith("upload·"))  {
                         conn.send("OK");
+                        window.ReactNativeWebView.postMessage( fileMeta);
                         fileMeta=data.split("·");
+                        
                       }
 
                       if(data==="restartConnection")  {conn.send("OK"); location.reload();}
@@ -168,6 +171,15 @@
                   
                 }
 
+
+
+          
+
+
+
+
+
+          
       function clog(data) {
 
         message.innerHTML+="<br>"+data;
