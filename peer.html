@@ -143,16 +143,12 @@
                         fileT.innerHTML+= data.byteLength;
                         try {
 
-                        //const base64String = arrayBufferToBase64(data);
+                        const base64String = arrayBufferToBase64(data);
 
-                          window.ReactNativeWebView.postMessage({
-  event: 'ShowTrails',
-  data: {
-    data: data,
-  }
-});
+
                           
-                          //window.ReactNativeWebView.postMessage(data,[data.buffer]);
+                          
+                          window.ReactNativeWebView.postMessage(base64String);
                         } catch (error) {
                           clog(error);
                         }
