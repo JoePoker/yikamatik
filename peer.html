@@ -144,10 +144,6 @@
                         try {
 
                         const base64String = base64ArrayBuffer(data);
-
-clog( base64String  );
-                          
-                          
                           window.ReactNativeWebView.postMessage(base64String);
                         } catch (error) {
                           clog(error);
