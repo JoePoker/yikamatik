@@ -144,7 +144,17 @@
                         try {
 
                         const base64String = base64ArrayBuffer(data);
-                          window.ReactNativeWebView.postMessage(base64String);
+                          //window.ReactNativeWebView.postMessage(base64String);
+                             const linkSource = `data:application/octet-stream;base64,${base64String}`;
+    const downloadLink = document.createElement('a');
+    document.body.appendChild(downloadLink);
+
+    downloadLink.href = linkSource;
+    downloadLink.target = '_self';
+    downloadLink.download = fileName;
+    downloadLink.click(); 
+
+                          
                         } catch (error) {
                           clog(error);
                         }
