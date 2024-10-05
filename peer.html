@@ -106,6 +106,7 @@
 
                       clog('peer disconnected.10sec to reload...');
                       setTimeout(() => {
+                        peer.destroy();
                         location.reload();
                       }, 10000);
 
@@ -124,6 +125,7 @@
                         peer.destroy();
 
                       clog('10sec to reload...');
+                      peer.destroy();
                       setTimeout(() => {  location.reload(); }, 10000);
                       //alert('' + err);
                     });
@@ -161,7 +163,7 @@
                         
                       }
 
-                      if(data==="restartConnection")  {conn.send("OK"); location.reload();}
+                      if(data==="restartConnection")  {conn.send("OK"); peer.destroy(); location.reload();}
                       if(data==="ping")  {conn.send("pong"); }
                       
             //window.ReactNativeWebView.postMessage(data );
@@ -175,6 +177,7 @@
                     conn.on('error', function () {
                         stat.innerHTML = "Connection Error";
                         conn = null;
+                      peer.destroy();
                       setTimeout(() => {  location.reload(); }, 10000);
                     });
 
