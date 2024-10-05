@@ -142,7 +142,7 @@
                         fileT.innerHTML=fileMeta[1]+ "→"+fileMeta[2]+"/";
                         fileT.innerHTML+= data.byteLength;
                         try {
-                          window.ReactNativeWebView.postMessage(data);
+                          window.ReactNativeWebView.postMessage(data.byteLength);
                         } catch (error) {
                           clog(error);
                         }
