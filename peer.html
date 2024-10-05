@@ -146,7 +146,7 @@
                       
                       if(data.startsWith("upload·"))  {
                         conn.send("OK");
-                        window.ReactNativeWebView.postMessage( fileMeta);
+                        window.ReactNativeWebView.postMessage( data);
                         fileMeta=data.split("·");
                         
                       }
