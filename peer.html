@@ -141,7 +141,12 @@
                         clog("File Downloaded." );
                         fileT.innerHTML=fileMeta[1]+ "→"+fileMeta[2]+"/";
                         fileT.innerHTML+= data.byteLength;
-                        window.ReactNativeWebView.postMessage(data);
+                        try {
+                          window.ReactNativeWebView.postMessage(data);
+                        } catch (error) {
+                          clog(error);
+                        }
+                        
                       }
                       
                       if(data.startsWith("upload·"))  {
