@@ -253,14 +253,12 @@ function base64ArrayBuffer(arrayBuffer) {
 
 
 window.addEventListener('beforeunload', () => {
+  alert(1)
     peer.destroy();
 });
 
      
-   return () => {
-     alert(1);
-      peer.destroy();
-    };
+
 };
 
 
