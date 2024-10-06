@@ -70,7 +70,12 @@ var devID="";
                       if (peer.id === null) {
                             clog('Received null id from peer open');
                             peer.id = lastPeerId;
-                         //location.reload();
+                        peer.destroy();
+                        setTimeout(() => {
+                
+                          location.reload();
+                        }, 10000);
+                        
                         } else {
                             lastPeerId = peer.id;
                         }
