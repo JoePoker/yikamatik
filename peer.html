@@ -249,6 +249,10 @@ function base64ArrayBuffer(arrayBuffer) {
         message.innerHTML+="<br>"+data;
         
       }
+
+   return () => {
+      peer.destroy();
+    };
 };
 
 
