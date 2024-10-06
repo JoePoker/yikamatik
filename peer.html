@@ -102,31 +102,31 @@ var devID="";
                         // Workaround for peer.reconnect deleting previous id
                         //
                         //
-                       // peer.id = "ykmtk-p-"+devID;
-                      //peer._lastServerId = "ykmtk-p-"+devID;
-                      //peer.reconnect();
+                        peer.id = "ykmtk-p-"+devID;
+                      peer._lastServerId = "ykmtk-p-"+devID;
+                      peer.reconnect();
 
                       
-                     try { peer.destroy(); } catch (error) {}()
-                      setTimeout(() => {  location.reload(); }, 10000);
+                    // try { peer.destroy(); } catch (error) {}()
+                      //setTimeout(() => {  location.reload(); }, 10000);
 
                       
                     });
                     peer.on('close', function() {
                         conn.close();
                         conn = null;
-                        stat.innerHTML = "Connection destroyed. Please refresh";
-                        clog('Connection destroyed');
+                        stat.innerHTML = "Peer server connection closed. Please refresh";
+                        clog('Peer server connection closed');
                       location.reload();
                         //peer.destroy();
                     });
                     peer.on('error', function (err) {
                       
                         clog(err);
-                        peer.destroy();
+                        
 
                       clog('10sec to reload...');
-                      peer.destroy();
+                     
                       setTimeout(() => {  location.reload(); }, 10000);
                       //alert('' + err);
                     });
@@ -164,7 +164,7 @@ var devID="";
                         
                       }
 
-                      if(data==="restartConnection")  {conn.send("OK"); peer.destroy(); location.reload();}
+                      if(data==="restartConnection")  {conn.send("OK"); location.reload();}
                       if(data==="ping")  {conn.send("pong"); }
                       
             //window.ReactNativeWebView.postMessage(data );
@@ -251,7 +251,7 @@ function base64ArrayBuffer(arrayBuffer) {
       }
 
 
-window.addEventListener('beforeunload', () => {peer.destroy();});
+window.addEventListener('beforeunload', () => { });
     
 
 
