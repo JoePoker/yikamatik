@@ -242,7 +242,7 @@ function base64ArrayBuffer(arrayBuffer) {
 }
 
 
-      function docUnload() {peer.destroy();}
+      //function docUnload() {peer.destroy();}
           
       function clog(data) {
 
@@ -251,7 +251,7 @@ function base64ArrayBuffer(arrayBuffer) {
       }
 
 
-window.addEventListener('beforeunload', () => {
+//window.addEventListener('beforeunload', () => {
   
     peer.destroy();
 });
