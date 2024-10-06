@@ -107,7 +107,7 @@ var devID="";
                       //peer.reconnect();
 
                       clog('peer disconnected.10sec to reload...');
-                      peer.destroy();
+                      try {peer.destroy();} catch (error) {}()
                       setTimeout(() => {
                         
                         location.reload();
