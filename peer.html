@@ -107,7 +107,7 @@ var devID="";
                       //peer.reconnect();
 
                       clog('peer disconnected.10sec to reload...');
-                      try {peer.destroy();} catch (error) {}()
+                     // try {peer.destroy();} catch (error) {}()
                       setTimeout(() => {
                         
                         location.reload();
@@ -120,7 +120,8 @@ var devID="";
                         conn = null;
                         stat.innerHTML = "Connection destroyed. Please refresh";
                         clog('Connection destroyed');
-                        peer.destroy();
+                      location.reload();
+                        //peer.destroy();
                     });
                     peer.on('error', function (err) {
                       
@@ -180,7 +181,7 @@ var devID="";
                     conn.on('error', function () {
                         stat.innerHTML = "Connection Error";
                         conn = null;
-                      peer.destroy();
+                      //peer.destroy();
                       setTimeout(() => {  location.reload(); }, 10000);
                     });
 
