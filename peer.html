@@ -29,11 +29,6 @@
 
 
 var devID="";
-
-
-
-   function initialize() {
-
                 var lastPeerId = null;
                 var peer = null; // Own peer object
                 var peerId = null;
@@ -51,6 +46,11 @@ var devID="";
                 var clearMsgsButton = document.getElementById("clearMsgsButton");
                 
                 var filemeta="";
+
+
+   function initialize() {
+
+
                 /**
                  * Create the Peer object for our end of the connection.
                  *
@@ -132,7 +132,7 @@ var devID="";
                       //alert('' + err);
                     });
                 
-
+};
                 /**
                  * Triggered once a connection has been achieved.
                  * Defines callbacks to handle incoming data and connection events.
@@ -259,7 +259,7 @@ window.addEventListener('beforeunload', () => {
 
      
 
-};
+
 
 
         </script>
