@@ -107,7 +107,7 @@ var devID="";
                       peer.reconnect();
 
                       
-                     // try {peer.destroy();} catch (error) {}()
+                      try {peer.destroy();} catch (error) {}()
                       setTimeout(() => {  location.reload(); }, 10000);
 
                       
