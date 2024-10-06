@@ -102,13 +102,13 @@ var devID="";
                         // Workaround for peer.reconnect deleting previous id
                         //
                         //
-                        peer.id = "ykmtk-p-"+devID;
-                      peer._lastServerId = "ykmtk-p-"+devID;
-                      peer.reconnect();
+                       // peer.id = "ykmtk-p-"+devID;
+                      //peer._lastServerId = "ykmtk-p-"+devID;
+                      //peer.reconnect();
 
                       
-                      //try { peer.destroy(); } catch (error) {}()
-                     // setTimeout(() => {  location.reload(); }, 10000);
+                     try { peer.destroy(); } catch (error) {}()
+                      setTimeout(() => {  location.reload(); }, 10000);
 
                       
                     });
