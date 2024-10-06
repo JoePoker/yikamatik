@@ -117,8 +117,8 @@ var devID="";
                         conn = null;
                         stat.innerHTML = "Peer server connection closed. Please refresh";
                         clog('Peer server connection closed');
-                      location.reload();
-                        //peer.destroy();
+                      peer.disconnect();
+                      setTimeout(() => {  location.reload(); }, 1000);
                     });
                     peer.on('error', function (err) {
                       
@@ -126,8 +126,8 @@ var devID="";
                         
 
                       clog('10sec to reload...');
-                     
-                      setTimeout(() => {  location.reload(); }, 10000);
+                     peer.disconnect();
+                      setTimeout(() => {  location.reload(); }, 1000);
                       //alert('' + err);
                     });
                 
@@ -179,7 +179,7 @@ var devID="";
                         stat.innerHTML = "Connection Error";
                         conn = null;
                       //peer.destroy();
-                      setTimeout(() => {  location.reload(); }, 10000);
+                      //setTimeout(() => {  location.reload(); }, 10000);
                     });
 
                   
@@ -251,7 +251,9 @@ function base64ArrayBuffer(arrayBuffer) {
       }
 
 
-window.addEventListener('beforeunload', () => { });
+window.addEventListener('beforeunload', () => {
+peer.disconnect();
+});
     
 
 
