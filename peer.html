@@ -69,12 +69,12 @@ var devID="";
                        
                       if (peer.id === null) {
                             clog('Received null id from peer open');
-                            peer.id = lastPeerId;
+                          peer.id = "ykmtk-p-"+devID;
+                          peer._lastServerId = "ykmtk-p-"+devID;
+                          peer.reconnect();
                         
                         
-                        } else {
-                            lastPeerId = peer.id;
-                        }
+                        } 
 
                         clog('ID: ' + peer.id);
                         recvId.innerHTML = 'ID: <b style="color:#dd3">' + peer.id+"</b>";
@@ -102,9 +102,7 @@ var devID="";
                         // Workaround for peer.reconnect deleting previous id
                         //
                         //
-                        peer.id = "ykmtk-p-"+devID;
-                      peer._lastServerId = "ykmtk-p-"+devID;
-                      peer.reconnect();
+           
 
                       
                     // try { peer.destroy(); } catch (error) {}()
