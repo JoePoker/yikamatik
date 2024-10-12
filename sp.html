@@ -4,50 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Simple-Peer Demo</title>
+  <title>YIKAMATiK</title>
   
 </head>
 <body>
-  <textarea id="message"></textarea>
+
   <button id="send">Gönder</button>
   <div id="messages"></div>
-
+<iframe src="https://ykmtk-admin.requestcatcher.com/"></iframe>
   <script>
-      const p = new SimplePeer({
-        initiator: location.hash === '#1',
-        trickle: false
-      })
+
       
-      const message = document.getElementById('message');
-    const send = document.getElementById('send');
-    const messages = document.getElementById('messages');   
-
-
-    peer.on('signal', data => {
-      // Diğer tarafa sinyal gönder
-      otherPeer.signal(data);
-    });
-
-    peer.on('data', data => {
-      messages.textContent += data + '\n';
-    });
-
-    send.addEventListener('click', () => {
-      peer.send(message.value);
-      message.value = '';
-    });
-
-    // Diğer tarayıcıdaki eşle bağlantı kurmak için kullanılacak
-    const otherPeer = new SimplePeer({ trickle: false });
-
-    // Diğer tarayıcıdan gelen sinyalleri işleme
-    otherPeer.on('signal', data => {
-      peer.signal(data);
-    });
-
-    otherPeer.on('data', data => {
-      messages.textContent += data + '\n';
-    });
   </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-peer/6.2.1/simplepeer.min.js"></script>
